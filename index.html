@@ -1,0 +1,47 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Online</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>Minha Loja</h1>
+            </div>
+            <nav>
+                <a href="#products">Produtos</a>
+                <a href="#" id="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="products" class="product-section">
+                <h2>Produtos</h2>
+                <div id="product-list" class="product-list"></div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2024 Minha Loja. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Carrinho de Compras</h2>
+            <ul id="modal-cart-list"></ul>
+        </div>
+    </div>
+
+
+    <script src="./index.js"></script>
+</body>
+</html>
