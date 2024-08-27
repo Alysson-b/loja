@@ -1,4 +1,4 @@
-<html lang="pt-BR">
+<<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
     <div class="container">
         <header>
             <div class="logo">
-                <h1>Minha Loja</h1>
+                <h1>Lojao do R$10</h1>
             </div>
             <nav>
                 <a href="#products">Produtos</a>
@@ -18,12 +18,16 @@
                     <i class="fas fa-shopping-cart"></i>
                     <span id="cart-count">0</span>
                 </a>
+                <a href="#" id="login-icon">
+                    <i class="fas fa-user"></i>
+                </a>
             </nav>
         </header>
 
         <main>
             <section id="products" class="product-section">
-                <h2>Produtos</h2>
+                <h2>Busque aqui!</h2>
+                <input type="text" id="search-bar" placeholder="Pesquisar produtos..." />
                 <div id="product-list" class="product-list"></div>
             </section>
         </main>
@@ -33,14 +37,39 @@
         </footer>
     </div>
 
+    <!-- Modal de Login -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Email" required />
+                <input type="password" id="login-password" placeholder="Senha" required />
+                <button type="submit">Login</button>
+                <div id="login-error" style="color: red; margin-top: 10px;"></div>
+            </form>
+        </div>
+    </div>
+
+    <div id="cep-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Inserir Endereço</h2>
+            <input type="text" id="cep-input" placeholder="Digite seu CEP" />
+            <button id="confirm-address-button">Confirmar Endereço</button>
+            <div id="address-info"></div>
+        </div>
+    </div>
+
     <div id="cart-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Carrinho de Compras</h2>
             <ul id="modal-cart-list"></ul>
+            <button id="insert-cep-button" style="display: none;">Inserir Seu CEP</button>
+            <button id="checkout-button" style="display: none;">Finalizar Compra</button>
         </div>
     </div>
-
 
     <script src="./index.js"></script>
 </body>

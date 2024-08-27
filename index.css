@@ -1,10 +1,9 @@
-/* Reset básico para margem e padding */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -13,17 +12,47 @@ body {
 }
 
 
-header {
-    background: #333;
+#login-modal .modal-content {
+    width: 80%;
+    max-width: 400px;
+}
+
+#login-email,
+#login-password {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #a8a8a8;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#login-button {
+    background: #007bff;
     color: #fff;
-    padding: 15px 20px;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#login-button:hover {
+    background: #0056b3;
+}
+
+header {
+    background: #424242;
+    color: #fff;
+    padding: 35px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 3px solid #007bff;
 }
 
-.header .logo h1 {
+.logo h1 {
     font-size: 24px;
     margin: 0;
 }
@@ -57,14 +86,16 @@ nav a#cart-icon #cart-count {
     right: -10px;
 }
 
-
 main {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-/* Product section */
+main h2 {
+    padding: 12px;
+}
+
 .product-section {
     flex: 1;
 }
@@ -73,18 +104,27 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
+    padding: 5rem;
 }
 
 .product {
     background: #fff;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s ease;
+    padding: 5px;
+}
+
+#search-bar {
+    width: 100%;
     padding: 10px;
-    /* Adjusted to a smaller size */
+    margin-bottom: 20px;
+    border: 1px solid #a8a8a8;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 .product:hover {
@@ -93,11 +133,11 @@ main {
 
 .product img {
     width: 100%;
-    height: auto;
+    height: 200px;
 }
 
 .product h2 {
-    font-size: 18px;
+    font-size: 12px;
     margin: 10px 0;
 }
 
@@ -105,7 +145,7 @@ main {
     font-size: 14px;
     color: #666;
     margin: 0 0 10px;
-    display: none; /* Hides the description */
+    display: none;
 }
 
 .product .price {
@@ -115,21 +155,21 @@ main {
 }
 
 .product button {
-    background: #007bff;
-    color: #fff;
+    background: #1eff0094;
+    color: rgb(59, 59, 59);
     border: none;
     padding: 10px 15px;
-    font-size: 14px;
-    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 
 .product button:hover {
-    background: #0056b3;
+    background: #1eff00fb;
 }
 
-/* Footer */
 footer {
     background: #333;
     color: #fff;
@@ -143,11 +183,10 @@ footer p {
     font-size: 14px;
 }
 
-/* Modal */
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
-    z-index: 9999; /* Ensure it sits on top of everything */
+    z-index: 9999;
     left: 0;
     top: 0;
     width: 100%;
@@ -168,6 +207,81 @@ footer p {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.3s ease;
+}
+
+#checkout-button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+}
+
+#checkout-button:hover {
+    background: #218838;
+}
+
+#cep-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+    transition: opacity 0.3s ease;
+}
+
+#cep-modal .modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease;
+}
+
+#cep-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #a8a8a8;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#address-info {
+    margin-top: 20px;
+}
+
+.cep-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cep-close:hover,
+.cep-close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+#address {
+    margin: 20px 0;
+    font-size: 16px;
 }
 
 @keyframes fadeIn {
@@ -196,7 +310,6 @@ footer p {
     text-decoration: none;
 }
 
-/* Modal Content */
 .modal-content h2 {
     margin-top: 0;
     color: #333;
@@ -210,7 +323,7 @@ footer p {
 }
 
 .modal-content li {
-    padding: 50px;
+    padding: 15px;
     border-bottom: 1px solid #ddd;
     display: flex;
     justify-content: space-between;
@@ -236,11 +349,9 @@ footer p {
     background: #c82333;
 }
 
-
 @media (max-width: 768px) {
     .modal-content {
         width: 90%;
         padding: 15px;
     }
 }
-
